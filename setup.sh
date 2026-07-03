@@ -36,7 +36,7 @@ if [ -n "$MISSING_DEPS" ]; then
     update_apt=""
     while [[ ! "$update_apt" =~ ^[YyNn]$ ]]; do
         echo "Do you want to run 'sudo apt update' before installing? (y/n):"
-        read -r update_apt
+        read -r update_apt </dev/tty
     done
     
     if [[ "$update_apt" =~ ^[Yy]$ ]]; then
@@ -54,7 +54,7 @@ if command -v clang >/dev/null 2>&1 || command -v llvm-config >/dev/null 2>&1 ||
     while [[ ! "$install_llvm" =~ ^[YyNn]$ ]]; do
         echo "A version of LLVM/Clang is already installed on your system."
         echo "Do you still want to run the official LLVM installation script? (y/n):"
-        read -r install_llvm
+        read -r install_llvm </dev/tty
     done
     if [[ "$install_llvm" =~ ^[Yy]$ ]]; then
         sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
@@ -65,7 +65,7 @@ else
     install_llvm=""
     while [[ ! "$install_llvm" =~ ^[YyNn]$ ]]; do
         echo "LLVM/Clang was not detected in your PATH. Do you want to install it using the official script? (y/n):"
-        read -r install_llvm
+        read -r install_llvm </dev/tty
     done
     if [[ "$install_llvm" =~ ^[Yy]$ ]]; then
         sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
@@ -128,12 +128,12 @@ fi
 
 while [[ -z "$am_username" ]]; do
     echo "Please enter your Apple Music username:"
-    read -r am_username
+    read -r am_username </dev/tty
 done
 
 while [[ -z "$am_password" ]]; do
     echo "Please enter your Apple Music password:"
-    read -rs am_password
+    read -rs am_password </dev/tty
     echo
 done
 
@@ -164,7 +164,7 @@ if [ "$NEEDS_2FA" -eq 1 ]; then
     mfa_code=""
     while [[ -z "$mfa_code" ]]; do
         echo "Please enter your 2FA code:"
-        read -r mfa_code
+        read -r mfa_code </dev/tty
     done
     mkdir -p rootfs/data/data/com.apple.android.music/files
     echo -n "$mfa_code" > rootfs/data/data/com.apple.android.music/files/2fa.txt
