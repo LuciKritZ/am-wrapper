@@ -1,5 +1,7 @@
 # wrapper
 
+> **Note:** This project is built on top of the amazing work by the original creators and maintainers of the [WorldObservationLog/wrapper](https://github.com/WorldObservationLog/wrapper) fork repository.
+
 A tool to decrypt Apple Music songs. An active subscription is still needed.
 
 Supports only x86_64 and arm64 Linux.
