@@ -1,5 +1,6 @@
 # Editor
 .vscode/
+.agent/
 
 # Prerequisites
 *.d
@@ -94,7 +95,12 @@ wrapper-rootless
 rootfs/system/bin/linker64
 build/
 android-ndk-r23b/
+android-ndk-r23b-linux.zip
+.tmp/
 
 # Enviroment Variables
 .env
 !.env.example
+
+# Logs
+.log
