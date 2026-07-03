@@ -13,14 +13,13 @@ Installation methods:
 
 ### Automated Setup (Recommended)
 
-You can build the wrapper, perform the initial login, and configure the systemd service automatically using the provided setup script. 
+You can download, build the wrapper, perform the initial login, and configure the systemd service automatically with a single command. 
 
 ```bash
-chmod +x ./setup.sh
-./setup.sh
+curl -fsSL https://raw.githubusercontent.com/LuciKritZ/am-wrapper/main/install.sh | bash
 ```
 
-This script will automatically install all dependencies (LLVM, Android NDK), compile the wrapper, guide you through the 2FA login, and configure it to run seamlessly in the background as a systemd service.
+This script will clone the repository, install all dependencies (LLVM, Android NDK), compile the wrapper, guide you through the 2FA login, and configure it to run seamlessly in the background as a systemd service.
 
 ## Usage
 
